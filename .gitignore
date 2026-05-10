@@ -1,0 +1,32 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments and Packages
+.env
+.venv
+env/
+venv/
+bin/
+lib/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Data and Models (The heavy stuff)
+# It is better to keep these local or on the cluster storage
+data/
+models/
+*.pth
+*.h5
+*.onnx
+
+# HPO / Optimization logs
+*.log
+outputs/
+mlruns/
+
+# System files
+.DS_Store
+Thumbs.db
