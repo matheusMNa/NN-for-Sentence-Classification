@@ -3,16 +3,22 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 #carregando o dataset e fazendo data split de acordo com os splits oficiais do dataset
 def load_pubmed_rct():
-    dataset = load_dataset("pubmed_rct", "20k")
+    dataset = load_dataset("armanc/pubmed-rct20k")
 
-    X_train = dataset["train"]["text"]
-    y_train = dataset['train']['target']
+    print("Dentro da função load_pubmed_rct")
+
+    # Inside load_pubmed_rct in src/dataset.py
+    #print(f"Dataset columns: {dataset['train'].column_names}")
+
+    #corrigindo as labels
+    X_train = dataset['train']['text']
+    y_train = dataset['train']['label']
 
     X_val = dataset['validation']['text']
-    y_val = dataset['validation']['target']
+    y_val = dataset['validation']['label']
 
     X_test = dataset['test']['text']
-    y_test = dataset['test']['target']
+    y_test = dataset['test']['label']
 
     return (
         X_train, y_train,
@@ -34,7 +40,7 @@ def build_tfidf_vectorizer():
         ngram_range=(1, 2),
 
         #remove palavras que aparecerem só uma vez no corpus de treino
-        min_dif=2
+        min_df=2
     )
 
     return vectorizer
@@ -42,7 +48,7 @@ def build_tfidf_vectorizer():
 #vetorização
 
 def vectorize_data(
-        vectorzzer,
+        vectorizer,
         X_train,
         X_val,
         X_test
