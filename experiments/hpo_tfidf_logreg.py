@@ -1,11 +1,16 @@
 import optuna
 import numpy as np
 import time
+import os
+import joblib
+
 from sklearn.metrics import f1_score
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
 from src.dataset import load_pubmed_rct
+
+n_trials = int(os.getenv("N_TRIALS", 100))
 
 train_texts, train_labels, val_texts, val_labels,_,_ = load_pubmed_rct()
 
@@ -59,11 +64,9 @@ def objective(trial):
     model = LogisticRegression(
         C=C,
         solver='saga',
-        multi_class='multinomial',
         max_iter=1000,
         random_state=404,
-        n_jobs=-1
-    )
+        )
 
     # print('\n Treinando modelo de Regressão Logística')
 
@@ -85,10 +88,11 @@ def objective(trial):
 
     elapsed = time.time() - start_time
 
-    print(f"Trial {trial.number} completo."
-          f"F1 Macro: {macro_f1:.4f}"
-          f"Tempo = {elapsed:.2f} segundos"
-          )
+    print(
+    f"\nTrial {trial.number} completo\n"
+    f"F1 Macro: {macro_f1:.4f}\n"
+    f"Tempo = {elapsed:.2f} segundos\n"
+)
 
     return macro_f1
 
@@ -105,12 +109,29 @@ study = optuna.create_study(
 
 study.optimize(
     objective,
-    n_trials=100,
+    n_trials=n_trials,
     timeout=3600,
     catch=(Exception,)
 )
 
 #Melhores resultados
+
+best_params = study.best_params
+
+best_vectorizer = TfidfVectorizer(
+    max_features=best_params["max_features"],
+    ngram_range=(1, best_params["ngram_upper"]),
+    min_df=best_params["min_df"]
+ )
+
+best_vectorizer.fit(train_texts)
+
+joblib.dump(
+       value= best_vectorizer,
+       filename= "models/best_tfidf_vectorizer.joblib"
+)
+
+print("\n Vectorizer salvo com sucesso")
 
 print("\n Otimização completa.")
 print(f"Melhor F1 Macro: {study.best_value:.4f}")
@@ -121,4 +142,4 @@ for key, value in study.best_params.items():
 
 import json
 with open("best_params.json", "w") as f:
-    json.dump(study.best_params, f, ident=4)
+    json.dump(study.best_params, f, indent=4)
