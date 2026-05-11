@@ -141,5 +141,5 @@ for key, value in study.best_params.items():
     print(f"{key}: {value}")
 
 import json
-with open("best_params.json", "w") as f:
+with open("optmized_params\best_params_log_tfidf.json", "w") as f:
     json.dump(study.best_params, f, indent=4)
