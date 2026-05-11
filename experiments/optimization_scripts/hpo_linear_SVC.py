@@ -18,7 +18,7 @@ def main():
     vectorizer = joblib.load("models/best_tfidf_vectorizer.joblib")
 
     X_train = vectorizer.transform(train_texts)
-    X_val = vectorizer.transform(train_labels)
+    X_val = vectorizer.transform(val_texts)
 
     def objective(trial):
 
