@@ -1,0 +1,10 @@
+{
+    "n_layers": 2,
+    "hidden_0": 669,
+    "hidden_1": 477,
+    "dropout": 0.2219513544385711,
+    "lr": 0.0002526278442186802,
+    "weight_decay": 0.00018083253242288445,
+    "batch_size": 32,
+    "optimizer": "rmsprop"
+}
