@@ -1,12 +1,11 @@
 # NN-for-Sentence-Classification
 Esse repositório tem como objetivo utilizar otimização de hiperparâmetros de Redes Neurais (NN) para encarar um problema de classificação de texto, fazendo uso do dataset _PubMed RCT 20k_. O dado de entrada textual foi vetorizado por TF-IDF e processado pelos algoritmos de Aprendizado de Máquina (ML) SVC Linear e Regresão Logística para a construção de um baseline forte. Em seguida, uma Rede Neural (NN) do tipo Multi-Layer Perceptron (MLP) foi empregada para resolver o mesmo problema. Todos esses objetos -- vetorizador, modelos de ML e a MLP -- foram otimizados pelo framework _Optuna_. Todos os _scripts_ desse repositório foram desenvolvidos em Python. 
 
-# !["Badge Ilum"](https://img.shields.io/badge/Ilum%20-%20purple) !["Badge Satus"](https://img.shields.io/badge/Status%20-%20Em_Desenvolvimento%20-%20orange)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+# !["Badge Ilum"](https://img.shields.io/badge/Ilum%20-%20purple) !["Badge Satus"](https://img.shields.io/badge/Status%20-%20Em_Desenvolvimento%20-%20orange)!["Badge Python"](https://img.shields.io/badge/python-3670A0?style-flat&logo=python&logoColor=ffdd54)
 
 
 # 🛠️ Tecnologias utilizadas  🛠️
-## IA
-# ![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=white)
+## IA ![Claude](https://img.shields.io/badge/Claude-D97757?style-flat&logo=claude&logoColor=white)
 O Claude (Sonnet 4.5) foi utlizado para auxiliar no _debugging_ do software criado e na estruturação do pipeline de otimização no _Optuna_.
 
 ## Bibliotecas e módulos
@@ -34,6 +33,8 @@ Após realizar o download do repositório, é necessário criar um ambiente virt
 Aluno do terceiro semestre de Ciência e Tecnologia, na Ilum Escola de Ciência
 
 -Escreveu todo o código e estruturou este repositório no GitHub.
+
+
 
 
 Agradecimento especial ao professor da matéria de Redes Neurais e Algoritmos Genéticos:
