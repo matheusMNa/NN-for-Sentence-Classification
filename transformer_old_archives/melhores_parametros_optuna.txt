@@ -1,0 +1,9 @@
+Melhor Loss de Validação: 0.4502
+Melhores Hiperparâmetros:
+  batch_size: 32
+  n_layers: 2
+  hidden_dims: 219
+  dropout: 0.10738390120083377
+  lr: 0.0006231149974183435
+  weight_decay: 4.914033729772337e-05
+  optimizer: RMSprop
