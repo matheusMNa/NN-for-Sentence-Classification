@@ -16,7 +16,7 @@ venv/
 
 # Data and Models (The heavy stuff)
 # It is better to keep these local or on the cluster storage
-data/
+
 models/
 *.pth
 *.h5
@@ -30,3 +30,4 @@ mlruns/
 # System files
 .DS_Store
 Thumbs.db
+embeddings/
