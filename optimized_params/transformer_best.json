@@ -1,0 +1,10 @@
+{
+    "batch_size": 64,
+    "n_layers": 2,
+    "hidden_dims": 187,
+    "dropout": 0.512347921562319,
+    "lr": 0.000840702998596602,
+    "weight_decay": 1.4924629957098948e-05,
+    "optimizer": "rmsprop"
+} 
+  
