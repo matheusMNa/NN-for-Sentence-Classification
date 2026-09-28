@@ -1,0 +1,10 @@
+{
+    "hidden_size": 206,
+    "num_layers": 2,
+    "dropout": 0.37432079008255853,
+    "freeze_embeddings": true,
+    "lr": 0.0013757990665094484,
+    "weight_decay": 1.563895067227184e-05,
+    "batch_size": 32,
+    "optimizer": "rmsprop"
+}

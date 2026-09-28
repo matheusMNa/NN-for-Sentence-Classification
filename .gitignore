@@ -26,6 +26,7 @@ models/
 *.log
 outputs/
 mlruns/
+hpc/logs/
 
 # System files
 .DS_Store
