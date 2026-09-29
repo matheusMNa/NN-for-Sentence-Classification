@@ -1,0 +1,10 @@
+{
+    "kernel_set": "2-3-4-5",
+    "num_filters": 81,
+    "dropout": 0.2305995058523155,
+    "freeze_embeddings": true,
+    "lr": 0.00016388312675942878,
+    "weight_decay": 5.564867041472614e-05,
+    "batch_size": 64,
+    "optimizer": "rmsprop"
+}
